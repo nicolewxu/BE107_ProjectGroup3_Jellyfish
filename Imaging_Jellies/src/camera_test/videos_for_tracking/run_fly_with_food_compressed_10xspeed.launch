@@ -1,0 +1,7 @@
+<launch>
+
+<node pkg="rosbag" type="play" name="rosbag_player" args="/home/group3/Dropbox/grad_classes/Spring_2014/BE107/lab5/videos_for_tracking/fly_with_food_compressed_small.bag -r 10"/>
+<node pkg="image_transport" type="republish" name="image_decompression" args="compressed in:=/camera/image_rect raw out:=/camera/image_mono"/>
+<node pkg="image_view" type="image_view" name="image_viewer" args="image:=/camera/image_mono"/>
+
+</launch>
